@@ -1,0 +1,101 @@
+.welcome {
+  margin-top: 112px;
+}
+.welcome h1 {
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 4vw + 0.85rem, 2.75rem);
+}
+.welcome h1 span:nth-of-type(2) {
+  color: var(--accentClr);
+}
+.welcome-second-text {
+  margin-top: 2rem;
+  display: flex;
+  column-gap: 24px;
+  overflow: hidden;
+  
+}
+.welcome-second-text img {
+  width: 8rem;
+  height: 11rem;
+  object-fit: cover;
+}
+.welcome-second-text p {
+  max-width: 380px;
+  margin-bottom: 8px;
+}
+.welcome-second-text button {
+  background-color: transparent;
+  border: none;
+}
+.welcome > div {
+  display: flex;
+  /* gap:12px */
+}
+.welcome-text {
+  flex: 1.5;
+}
+.welcome-image {
+  flex: 0.5;
+  position: relative;
+}
+.welcome-image img {
+  max-height: 400px;
+}
+.welcome-image::before {
+  --d: 3s;
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  animation: scale-in 5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: calc(0.75 * var(--d));
+}
+.welcome-second-text img,
+  .welcome-second-text p,
+   .welcome-second-text h2{
+    /* visibility: visible; */
+    /* height: auto; */
+     /* transform: translateY(-200px); */
+    animation: slide-in-bottom 1s var(--i) ease-in both;
+  }
+
+
+  .welcome-container svg path{
+  -webkit-animation: pulsate-fwd 1s var(--i) ease-in-out infinite both;
+  animation: pulsate-fwd 1s var(--i)ease-in-out infinite both;
+}
+h1 > span {
+  /* display: inline-block; */
+  /* animation: slide-in-bottom 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both; */
+  /* animation-delay: calc(0.5 * var(--i)); */
+   animation: slide-in-bottom 1s var(--i) ease-in both;
+}
+/* h1 > span:nth-of-type(2) {
+  animation: tracking-in-expand-fwd 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation-delay: calc(0.5 * var(--i));
+} */
+
+
+
+ 
+
+@media (max-width: 49.9375rem) {
+  .welcome-second-text img,
+  .welcome-second-text p,
+  .welcome-second-text h2 {
+    visibility: hidden;
+    height: 0;
+  }
+  .welcome-text {
+    flex: 1;
+  }
+  .welcome-image {
+    flex: 1;
+  }
+  .welcome-container {
+    margin-right: 0;
+  }
+}
